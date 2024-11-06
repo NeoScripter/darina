@@ -30,6 +30,7 @@ export default {
             },
             maxHeight: {
                 130: "32.5rem",
+                148: "37rem",
             },
             minHeight: {
                 96: "24rem",
@@ -39,8 +40,7 @@ export default {
                 ...generateWidths(97, 200),
             },
             height: {
-                130: "32.5rem",
-                16: "4rem",
+                ...generateHeights(97, 200),
             },
             boxShadow: {
                 "white-large": "0 0 20px 40px rgba(255, 255, 255, 1)",
@@ -90,3 +90,18 @@ function generateWidths(start, end) {
     }
     return widths;
 }
+
+/**
+ * Function to generate custom height utilities
+ * @param {number} start - starting value for custom heights
+ * @param {number} end - ending value for custom heights
+ * @returns {object} - object containing height classes
+ */
+function generateHeights(start, end) {
+    let heights = {};
+    for (let i = start; i <= end; i++) {
+        heights[i] = `${i / 4}rem`;
+    }
+    return heights;
+}
+
