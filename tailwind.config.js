@@ -26,7 +26,7 @@ export default {
                 "black-700": "#333",
             },
             maxWidth: {
-                "screen-3xl": "1920px",
+                "screen-3xl": "1440px",
             },
             maxHeight: {
                 130: "32.5rem",

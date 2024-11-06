@@ -3,7 +3,7 @@
     class="fixed top-0 z-10 w-screen h-screen overflow-hidden transition-all duration-1000 ease-in-out md:hidden bg-white/30 backdrop-blur">
 
     <div class="absolute right-0 z-10 text-white w-[min(100%,_360px)] bg-black/90">
-        <div class="flex items-center justify-end h-16 pr-4">
+        <div class="flex items-center justify-end h-16 pr-4 sm:pr-10">
             <button x-on:click="isOpen = !isOpen"
                 class="relative flex items-center justify-center p-2 transition-all duration-200 transform rounded-full shadow-md group ring-0 ring-gray-300 hover:ring-4 group-focus:ring-4 ring-opacity-30">
                 <div
