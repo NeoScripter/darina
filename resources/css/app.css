@@ -191,7 +191,13 @@
     font-display: swap;
 }
 
+.no-scrollbar {
+    scrollbar-width: none;
+  }
 
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
 
 [x-cloak] {

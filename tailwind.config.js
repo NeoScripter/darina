@@ -13,12 +13,16 @@ export default {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-                title: ["Playfair Display", ...defaultTheme.fontFamily.title],
-                main: ["Inter", ...defaultTheme.fontFamily.main],
+                title: ["Playfair Display"],
+                main: ["Inter"],
             },
+            fontSize: {
+                'xxxs': '0.5rem', // 8px
+                'xxs': '0.625rem', // 10px
+              },
             colors: {
-                "brand-orange": "#C3512F",
-                "black-800": "#222",
+                "orange": "#FF5A00",
+                "beige": "#EEECEA",
                 "black-700": "#333",
             },
             maxWidth: {
@@ -36,6 +40,7 @@ export default {
             },
             height: {
                 130: "32.5rem",
+                16: "4rem",
             },
             boxShadow: {
                 "white-large": "0 0 20px 40px rgba(255, 255, 255, 1)",
