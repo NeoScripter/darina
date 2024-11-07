@@ -37,10 +37,10 @@ export default {
                 100: "25rem",
             },
             width: {
-                ...generateWidths(97, 200),
+                ...generateWidths(60, 200),
             },
             height: {
-                ...generateHeights(97, 200),
+                ...generateHeights(20, 200),
             },
             boxShadow: {
                 "white-large": "0 0 20px 40px rgba(255, 255, 255, 1)",
