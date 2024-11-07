@@ -1,11 +1,11 @@
 <div x-data="{
     canScrollLeft: false,
-    canScrollRight: false,
+    canScrollRight: true,
     checkScroll() {
         this.canScrollLeft = this.$refs.nav.scrollLeft > 0;
         this.canScrollRight = this.$refs.nav.scrollLeft < this.$refs.nav.scrollWidth - this.$refs.nav.clientWidth;
     }
-}" x-init="checkScroll" @scroll.window="checkScroll()" class="relative">
+}" x-init="checkScroll" @scroll.window="checkScroll()" class="relative bg-white">
     <!-- Left Indicator -->
     <div x-show="canScrollLeft"
         class="absolute left-0 flex items-center justify-center p-2 bg-transparent border-r-2 border-gray-300 md:hidden top-4 w-9 bottom-10">

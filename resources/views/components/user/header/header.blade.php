@@ -1,4 +1,4 @@
-<header x-data="{ isOpen: false }" class="sticky top-0">
+<header x-data="{ isOpen: false }" class="relative">
 
     <x-user.header.popup />
 

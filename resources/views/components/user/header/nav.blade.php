@@ -12,7 +12,7 @@
         @endfor
     </nav>
     <button
-        class="flex items-center justify-center px-4 py-2 ml-auto text-xs text-white transition-opacity rounded-full md:ml-0 sm:px-6 sm:text-base bg-orange hover:opacity-75">
+        class="flex items-center justify-center px-4 py-2 ml-auto text-xs text-white transition-opacity rounded-full md:ml-0 sm:px-6 sm:text-sm bg-orange hover:opacity-75">
         Звонок
     </button>
     <button x-on:click="isOpen = !isOpen"
