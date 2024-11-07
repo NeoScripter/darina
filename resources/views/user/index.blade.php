@@ -45,4 +45,24 @@
     </div>
 
     <x-user.home.carousel />
+
+    <div class="bg-beige">
+        <h2 class="mb-8 text-5xl text-center font-title">Вдохновления</h2>
+
+        <nav class="w-4/5 mx-auto">
+            <ul class="flex flex-wrap items-center justify-around gap-6">
+                @php
+                    $nav_names = ['Кухни', 'Шкафы', 'Прихожие', 'Гардеробные', 'Рабочие зоны'];
+                @endphp
+                @for ($g = 1; $g < 6; $g++)
+                    <a href="" class="block text-base transition-colors duration-300 shrink-0 hover:text-orange">
+                        {{ $nav_names[$g - 1] }}
+                    </a>
+                @endfor
+            </ul>
+        </nav>
+
+
+    </div>
+
 </x-user-layout>
