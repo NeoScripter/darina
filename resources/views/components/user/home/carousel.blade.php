@@ -3,12 +3,12 @@
     class="relative overflow-x-hidden group bg-beige md:px-4 lg:px-8">
 
     <button @click="currentSlide = (currentSlide - 1 + totalSlides) % totalSlides" x-show="currentSlide !== 0"
-        class="absolute z-10 transition-opacity transform -translate-y-1 bg-transparent opacity-0 left-1 bottom-20 group-hover:opacity-100">
+        class="absolute z-10 w-8 transition-opacity transform -translate-y-1 bg-transparent opacity-0 left-1 bottom-20 group-hover:opacity-100">
         <img src="{{ asset('images/main/slide-prev.svg') }}" alt="">
     </button>
 
     <button @click="currentSlide = (currentSlide + 1) % totalSlides" x-show="currentSlide !== 4"
-        class="absolute z-10 transition-opacity transform -translate-y-1 bg-transparent opacity-0 right-1 bottom-20 group-hover:opacity-100">
+        class="absolute z-10 w-8 transition-opacity transform -translate-y-1 bg-transparent opacity-0 right-1 bottom-20 group-hover:opacity-100">
         <img src="{{ asset('images/main/slide-next.svg') }}" alt="">
     </button>
 
