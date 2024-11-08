@@ -14,18 +14,7 @@
             Your browser does not support the video tag.
         </video>
 
-        <svg class="absolute cursor-pointer top-2 right-2 md:top-6 md:right-6" width="50" height="50">
-            <circle class="progress-ring__circle" cx="25" cy="25" r="20"></circle>
-
-            <line x1="21" y1="17" x2="21" y2="33" stroke="currentColor" stroke-width="3.5"
-                class="text-white" />
-
-            <line x1="29" y1="17" x2="29" y2="33" stroke="currentColor" stroke-width="3.5"
-                class="text-white" />
-
-            <polygon class="hidden text-white" points="10,5 10,20 20,12.5" fill="currentColor"
-                transform="translate(8, 9) scale(1.3)" />
-        </svg>
+        <x-user.home.progress-bar :showLines="true"/>
 
         <div
             class="absolute left-0 right-0 flex items-center justify-center w-full gap-4 px-3 bottom-8 sm:bottom-10 md:bottom-20">
@@ -98,55 +87,7 @@
     </div>
 
 
-    <div x-data="{ currentSlide: 0, totalSlides: 5 }" class="relative px-4 pt-4 overflow-x-hidden group bg-beige lg:px-8">
-
-        <button @click="currentSlide = (currentSlide - 1 + totalSlides) % totalSlides" x-show="currentSlide !== 0"
-            class="absolute z-10 w-8 transition-opacity transform translate-y-8 bg-transparent opacity-0 left-1 bottom-1/2 group-hover:opacity-100">
-            <img src="{{ asset('images/main/slide-prev.svg') }}" alt="">
-        </button>
-
-        <button @click="currentSlide = (currentSlide + 1) % totalSlides" x-show="currentSlide !== 4"
-            class="absolute z-10 w-8 transition-opacity transform translate-y-8 bg-transparent opacity-0 right-1 bottom-1/2 group-hover:opacity-100">
-            <img src="{{ asset('images/main/slide-next.svg') }}" alt="">
-        </button>
-
-        <div class="flex items-center gap-12 py-8 transition-transform duration-500 ease-in-out"
-            :style="{ transform: `translateX(${currentSlide * -295}px)` }">
-
-            @for ($i = 0; $i < 5; $i++)
-                <div class="relative w-64 h-full overflow-hidden rounded-3xl shrink-0">
-
-                    <video muted class="object-cover object-center w-full h-full carousel__video"
-                        x-ref="video{{ $i }}"
-                        x-on:ended="
-                        currentSlide = (currentSlide + 1) % totalSlides;
-                        $nextTick(() => { $refs['video' + currentSlide].play() })
-                    ">
-                        <source src="{{ asset('videos/main/main-mb.mp4') }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-
-                    <svg class="absolute cursor-pointer top-2 right-2" width="50" height="50">
-                        <circle class="progress-ring__circle" cx="25" cy="25" r="20"></circle>
-
-                        <line x1="21" y1="17" x2="21" y2="33" stroke="currentColor"
-                            stroke-width="3.5" class="hidden text-white" />
-
-                        <line x1="29" y1="17" x2="29" y2="33" stroke="currentColor"
-                            stroke-width="3.5" class="hidden text-white" />
-
-                        <polygon class="text-white" points="10,5 10,20 20,12.5" fill="currentColor"
-                            transform="translate(8, 9) scale(1.3)" />
-                    </svg>
-
-                    <button class="absolute w-8 h-8 transition-opacity bottom-4 right-4 hover:opacity-80">
-                        <img src="{{ asset('images/main/plus.svg') }}" alt="Plus sign">
-                    </button>
-                </div>
-            @endfor
-        </div>
-
-    </div>
+    <x-user.home.benefits />
 
 
 </x-user-layout>
