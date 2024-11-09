@@ -80,11 +80,14 @@
                 class="w-40 py-2 text-xs text-center transition-colors bg-white border border-black rounded-full hover:bg-black hover:text-white">Рассчитать
                 стоимость</a>
             <a href="tel:+78003008556"
-                class="flex items-center justify-center px-4 py-2 text-xs text-white transition-opacity rounded-full sm:px-6 sm:text-sm bg-orange hover:opacity-75">
+                class="flex items-center justify-center px-4 py-2 text-xs text-white transition-opacity rounded-full sm:px-6 sm:text-sx bg-orange hover:opacity-75">
                 Звонок
             </a>
         </div>
     </div>
+
+
+    <x-user.home.videoModal />
 
 
     <x-user.home.benefits />
@@ -112,8 +115,15 @@
                         </div>
                         <h6 class="font-bold text-xxs">{{ $content[$i] }}</h6>
                     </div>
+
+                    @php
+                        $modalNumber = [4, 3, 1, 2];
+                    @endphp
+
                     @if ($i < 4)
-                        <button class="inline-flex items-center gap-1 text-xxs text-orange">
+                        <button
+                        @click="showVideoModal = true; videoModal = {{ $modalNumber[$i] }}"
+                        class="inline-flex items-center gap-1 text-xxs text-orange">
                             Узнать больше
                             <img src="{{ asset('images/advs/orange-arrow.svg') }}" alt="" class="w-1">
                         </button>

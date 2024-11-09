@@ -1,4 +1,4 @@
-<div x-data="{ currentSlide: 0, totalSlides: 5, showPopup: false, openModal: 0 }" class="relative px-4 pt-4 overflow-x-hidden group bg-beige lg:px-8">
+<div x-data="{ currentSlide: 0, totalSlides: 5 }" class="relative px-4 pt-4 overflow-x-hidden group bg-beige lg:px-8">
 
     <button @click="currentSlide = (currentSlide - 1 + totalSlides) % totalSlides" x-show="currentSlide !== 0"
         class="absolute z-10 w-8 transition-opacity transform translate-y-8 bg-transparent opacity-0 left-1 bottom-1/2 group-hover:opacity-100">
@@ -12,6 +12,10 @@
 
     <div class="flex items-center gap-12 py-8 transition-transform duration-500 ease-in-out"
         :style="{ transform: `translateX(${currentSlide * -305}px)` }">
+
+        @php
+            $legends = ['', 'Гарантия 5 лет', 'Заказ на дому', 'Современное производство', 'Качественные материалы и фурнитура'];
+        @endphp
 
         @for ($i = 0; $i < 5; $i++)
             <div class="relative w-64 overflow-hidden h-100 rounded-3xl shrink-0">
@@ -28,6 +32,9 @@
                     <img src="{{ asset('images/main/plus.svg') }}" alt="Plus sign">
                 </button>
 
+                <div class="absolute w-3/4 text-lg font-bold text-white left-3 top-2/3">
+                    {{ $legends[$i] }}
+                </div>
             </div>
         @endfor
     </div>

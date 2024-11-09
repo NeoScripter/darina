@@ -1,4 +1,5 @@
-<div x-ref="collapsible" x-cloak :class="{ 'opacity-0 pointer-events-none': !isOpen, 'opacity-100 pointer-events-auto': isOpen }"
+<div x-ref="collapsible" x-cloak
+    :class="{ 'opacity-0 pointer-events-none': !isOpen, 'opacity-100 pointer-events-auto': isOpen }"
     :style="isOpen ? 'height: 100vh' : 'height: 0px'"
     class="fixed top-0 z-10 w-screen h-screen overflow-hidden overflow-y-auto transition-all duration-1000 ease-in-out md:hidden bg-white/30 backdrop-blur">
 
@@ -39,14 +40,8 @@
             <ul class="grid gap-2 p-4">
 
                 @for ($k = 1; $k < 7; $k++)
-                    <li>
-                        <a href=""
-                            class="inline-flex items-center gap-4 text-xl transition-all hover:underline [text-underline-offset:0.2em]">
-                            <img src="{{ asset('images/nav/burger/burger-' . $k . '.webp') }}" alt=""
-                                class="w-6 h-6">
-                            {{ $burger_nav[$k] }}
-                        </a>
-                    </li>
+                    <x-user.header.nav-link href=""
+                        imgSrc="{{ asset('images/nav/burger/burger-' . $k . '.webp') }}" text="{{ $burger_nav[$k] }}" />
                 @endfor
             </ul>
         </nav>
@@ -54,16 +49,22 @@
         <nav class="mb-8">
             <ul class="grid gap-2 p-4">
 
-                @for ($k = 7; $k < 11; $k++)
-                    <li>
-                        <a href=""
-                            class="inline-flex items-center gap-4 text-xl transition-all hover:underline [text-underline-offset:0.2em]">
-                            <img src="{{ asset('images/nav/burger/burger-' . $k . '.webp') }}" alt=""
-                                class="w-6 h-6">
-                            {{ $burger_nav[$k] }}
-                        </a>
-                    </li>
+                @for ($k = 7; $k < 10; $k++)
+                    @php
+                        $events = [
+                            'showModal1' => 'showVideoModal = true; videoModal = 0',
+                            'showModal2' => 'showVideoModal = true; videoModal = 4',
+                            'showModal3' => 'showVideoModal = true; videoModal = 3',
+                            'showModal4' => 'showVideoModal = true; videoModal = 4',
+                        ];
+                        $eventKey = 'showModal' . ($k - 6);
+                        $alpineEvent = $events[$eventKey] ?? '';
+                    @endphp
+                    <x-user.header.nav-button event="{{ $alpineEvent }}"
+                        imgSrc="{{ asset('images/nav/burger/burger-' . $k . '.webp') }}" text="{{ $burger_nav[$k] }}" />
                 @endfor
+                <x-user.header.nav-link href="" imgSrc="{{ asset('images/nav/burger/burger-10.webp') }}"
+                    text="{{ $burger_nav[10] }}" />
             </ul>
         </nav>
     </div>

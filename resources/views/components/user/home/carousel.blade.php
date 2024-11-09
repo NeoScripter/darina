@@ -43,6 +43,7 @@
                 alt="3D визуализация компактной кухни с современной мебелью и бытовой техникой."
                 class="object-cover object-center h-20 mx-auto w-9/10">
             <button
+                @click="showVideoModal = true; videoModal = 0"
                 class="relative block px-4 py-1 mx-auto text-center text-white bg-black border border-black rounded-full text-xxs w-max -top-2 hover:bg-white hover:text-black">Смотреть
                 видео</button>
         </div>

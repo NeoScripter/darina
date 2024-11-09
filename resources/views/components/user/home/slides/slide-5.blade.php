@@ -1,6 +1,7 @@
+
 <div>
     <div class="relative w-full">
-        <img src="{{ asset('images/main/main-popup-5.webp') }}" alt="Иллюстрация минималистичной кухни с шкафами и бытовыми приборами." class="w-full">
+        <img src="{{ asset('images/main/main-popup-4.webp') }}" alt="Образцы материалов для выбора отделки мебели и фасадов." class="w-full">
 
         <button
             @click="showPopup = false"
@@ -9,28 +10,14 @@
         </button>
     </div>
     <div class="relative p-4 space-y-4 bg-white sm:p-6">
-        <h3 class="text-2xl font-semibold">Этапы работы</h3>
+        <h3 class="text-2xl font-semibold">Качественные материалы и фурнитура</h3>
 
-        <p>Забота и внимание — наши главные приоритеты. Мы с удовольствием ответим на все ваши вопросы, поможем выбрать идеальный вариант и создадим мебель, которая будет радовать вас каждый день!</p>
+        <p>Мы предлагаем качественные материалы широкой цветовой гаммы ЛДСП, МДФ, плёнки, эмали, пластика, камня и массива, начиная от лучших отечественных до австрийских производителей, учитывая требования качества, дизайна и функциональности, а также вашего бюджета.</p>
 
-        <div class="grid grid-cols-2 gap-4 p-2 pb-5">
-            <div>
-                <img src="{{ asset('images/main/111.webp') }}" alt="">
-                <p class="mt-1 text-sm text-balance">Проконсультируем и сделаем предварительный расчёт</p>
-            </div>
-            <div>
-                <img src="{{ asset('images/main/222.webp') }}" alt="">
-                <p class="mt-1 text-sm text-balance">Точно замеряем и поможем выбрать материалов</p>
-            </div>
-            <div>
-                <img src="{{ asset('images/main/333.webp') }}" alt="">
-                <p class="mt-1 text-sm text-balance">Составим проект по вашим  идеям и пожеланиям</p>
-            </div>
-            <div>
-                <img src="{{ asset('images/main/444.webp') }}" alt="">
-                <p class="mt-1 text-sm text-balance">Своевременно доставим и профессионально соберем</p>
-            </div>
-        </div>
+        <p>Работаем с ведущими производителями алюминиевого профиля, фурнитуры и комплектующих  на российском рынке.
+            Наши изделия повышают комфорт использования мебели во всех жилых помещениях и превращают открывание и закрывание шкафов в настоящее удовольствие.</p>
+
+        <p class="pb-5">Системы выдвижных ящиков подходят для любых решений, а хорошая фурнитура для функциональности и удобства в доме.</p>
 
         <button
                 class="block px-6 py-3 mx-auto text-xs text-white transition-opacity rounded-full hover:opacity-90 gradient-btn-orange">Заказать

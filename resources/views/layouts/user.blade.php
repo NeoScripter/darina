@@ -15,7 +15,9 @@
 </head>
 
 <body class="antialiased font-main">
-    <div class="mx-auto max-w-screen-3xl bg-beige">
+    <div
+    x-data="{showPopup: false, openModal: 0, showVideoModal: false, videoModal: 0}"
+    class="mx-auto max-w-screen-3xl bg-beige">
         <x-user.header.header />
 
         <x-user.header.slider />
