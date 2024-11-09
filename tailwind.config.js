@@ -24,6 +24,9 @@ export default {
                 "orange": "#FF5A00",
                 "beige": "#EEECEA",
                 "black-700": "#333",
+                "swamp": "#627867",
+                "dark-bg": "#202020",
+                "footer-bg": "#111"
             },
             maxWidth: {
                 "screen-3xl": "1440px",

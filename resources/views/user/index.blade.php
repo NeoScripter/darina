@@ -79,17 +79,111 @@
             <a href=""
                 class="w-40 py-2 text-xs text-center transition-colors bg-white border border-black rounded-full hover:bg-black hover:text-white">Рассчитать
                 стоимость</a>
-            <button
+            <a href="tel:+78003008556"
                 class="flex items-center justify-center px-4 py-2 text-xs text-white transition-opacity rounded-full sm:px-6 sm:text-sm bg-orange hover:opacity-75">
                 Звонок
-            </button>
+            </a>
         </div>
     </div>
 
 
     <x-user.home.benefits />
 
+    <div class="pt-10 bg-beige">
+        <picture class="object-cover object-center w-full">
+            <source srcset="{{ asset('images/main/main-preview-dk.webp') }}" media="(min-width: 768px)" />
+            <img src="{{ asset('images/main/main-preview-mb.webp') }}" alt="" />
+        </picture>
 
+        <button class="block px-6 py-3 mx-auto mt-4 text-xs text-white duration-300 ease-in rounded-full md:-translate-y-20 sm:-translate-y-12 transtion-opacity hover:opacity-80 sm:text-sm bg-swamp">Бесплатный дизайн проекта</button>
+    </div>
 
+    <div class="px-4 pb-10 mt-20 md:mt-14 sm:px-20">
+
+        <div class="grid grid-cols-2 gap-8 p-8 bg-white md:gap-12 sm:grid-cols-4 md:grid-cols-8 rounded-xl">
+            @php
+                $content = ['Качественные материалы и фурнитура', 'Собственное производство', 'Гарантия 5 лет', 'Заказ на дому', 'Доставка по всей России', 'Бесплатный проект', 'Срок изготовления от 14 дней', 'Рассрочка'];
+            @endphp
+            @for ($i = 0; $i < 8; $i++)
+                <div class="flex flex-col justify-between gap-3">
+                    <div>
+                        <div class="w-12 mb-2">
+                            <img src="{{ asset('images/advs/adv-'.($i+1).'.webp') }}" alt="" class="object-contain object-center w-full">
+                        </div>
+                        <h6 class="font-bold text-xxs">{{ $content[$i] }}</h6>
+                    </div>
+                    @if ($i < 4)
+                        <button class="inline-flex items-center gap-1 text-xxs text-orange">
+                            Узнать больше
+                            <img src="{{ asset('images/advs/orange-arrow.svg') }}" alt="" class="w-1">
+                        </button>
+                    @endif
+                </div>
+            @endfor
+        </div>
+    </div>
+
+    <div class="pt-8 pb-12 text-white bg-dark-bg">
+        <h3 class="mb-6 text-4xl font-bold text-center text-white">Видео отзывы</h3>
+
+        <div x-data="{ currentSlide: 0, totalSlides: 5 }" class="relative px-4 overflow-x-hidden group lg:px-8">
+
+            <button @click="currentSlide = (currentSlide - 1 + totalSlides) % totalSlides" x-show="currentSlide !== 0"
+                class="absolute z-10 w-8 transition-opacity transform translate-y-8 bg-transparent opacity-0 left-1 bottom-1/2 group-hover:opacity-100">
+                <img src="{{ asset('images/main/slide-prev.svg') }}" alt="">
+            </button>
+
+            <button @click="currentSlide = (currentSlide + 1) % totalSlides" x-show="currentSlide !== 4"
+                class="absolute z-10 w-8 transition-opacity transform translate-y-8 bg-transparent opacity-0 right-1 bottom-1/2 group-hover:opacity-100">
+                <img src="{{ asset('images/main/slide-next.svg') }}" alt="">
+            </button>
+
+            <div class="flex items-center gap-12 py-8 transition-transform duration-500 ease-in-out"
+                :style="{ transform: `translateX(${currentSlide * -305}px)` }">
+
+                @for ($i = 0; $i < 5; $i++)
+                    <div class="relative w-64 overflow-hidden h-100 rounded-3xl shrink-0">
+
+                        <video muted class="object-cover object-center w-full h-full carousel__video">
+                            <source src="{{ asset('videos/main/carousel-' . ($i + 1) . '.mp4') }}" type="video/mp4">
+                        </video>
+
+                        <x-user.home.progress-bar />
+
+                    </div>
+                @endfor
+            </div>
+        </div>
+
+        <p class="mt-8 mb-12 text-base text-center text-white">Проконсультируем и с радостью решим ваши вопросы</p>
+
+        <div
+            class="flex items-center justify-center w-full gap-4 px-3 mb-12">
+            <a href=""
+                class="w-40 py-2 text-xs text-center text-black transition-colors bg-white rounded-full hover:bg-black hover:text-white">Перейти
+                в Вотсап</a>
+            <a href=""
+                class="w-40 py-2 text-xs text-center text-white bg-black rounded-full hover:bg-white hover:text-black">Заказать
+                звонок</a>
+        </div>
+
+        <p class="mt-8 mb-8 text-base text-center text-white">Социальные сети</p>
+
+        <div class="flex items-center justify-center gap-3">
+            @for ($i = 0; $i < 4; $i++)
+                <x-user.home.social imgPath="{{ asset('images/socials/social-'.($i + 1).'.webp') }}" url="" alt="" />
+            @endfor
+        </div>
+
+        <p class="mt-8 mb-4 text-base text-center text-white">Оплачиваете любым удобным способом</p>
+
+        <div class="flex items-center justify-center gap-3 px-2">
+            @for ($i = 0; $i < 6; $i++)
+                <div class="h-24">
+                    <img src="{{ asset('images/pay/pay-'.($i + 1).'.webp') }}" alt="" class="object-contain h-full">
+                </div>
+            @endfor
+        </div>
+    </div>
 
 </x-user-layout>

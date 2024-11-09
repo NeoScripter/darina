@@ -43,7 +43,7 @@
         x-transition:leave-start="opacity-100 transform translate-y-0"
         x-transition:leave-end="opacity-0 transform translate-y-80"
         >
-        <div class="relative w-full max-w-2xl max-h-full mx-auto mt-20 md:mt-60"
+        <div class="relative w-full max-w-2xl max-h-full mx-auto mt-20 md:mt-30"
         x-on:click.away='showPopup=false'>
         <template x-if="openModal === 0">
             <x-user.home.slides.slide-1 />

@@ -1,4 +1,4 @@
-<div class="flex items-center justify-between gap-5 p-4 bg-beige sm:px-12 sm:py-5 sm:gap-12">
+<div class="flex items-center justify-between gap-5 p-4 sm:px-12 sm:py-5 sm:gap-12">
     <div class="w-16 h-6 sm:w-20 sm:h-8">
         <img src="{{ asset('images/nav/logo.webp') }}" alt="Darina logo" class="object-contain w-full h-full">
     </div>
@@ -11,10 +11,10 @@
                 class="block text-sm transition-colors duration-300 shrink-0 hover:text-orange">{{ $nav_items[$j] }}</a>
         @endfor
     </nav>
-    <button
+    <a href="tel:+78003008556"
         class="flex items-center justify-center px-4 py-2 ml-auto text-xs text-white transition-opacity rounded-full md:ml-0 sm:px-6 sm:text-sm bg-orange hover:opacity-75">
         Звонок
-    </button>
+    </a>
     <button x-on:click="isOpen = !isOpen"
         class="flex flex-col items-center justify-center w-8 bg-transparent md:hidden group">
 
