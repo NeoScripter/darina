@@ -16,7 +16,7 @@
 
 <body class="antialiased font-main">
     <div
-    x-data="{showPopup: false, openModal: 0, showVideoModal: false, videoModal: 0, showCallbackModal: {{ $errors->any() ? 'true' : 'true' }}}"
+    x-data="{showPopup: false, openModal: 0, showVideoModal: false, videoModal: 0, showCallbackModal: {{ $errors->any() ? 'true' : 'false' }}}"
     class="mx-auto max-w-screen-3xl bg-beige">
         <x-user.header.header />
 

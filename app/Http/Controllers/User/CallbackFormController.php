@@ -13,10 +13,10 @@ class CallbackFormController extends Controller
     {
         // Validate the form data
         $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'phone' => 'required|string|max:20',
-            'weekday' => 'nullable|string',
-            'time' => 'nullable|string',
+            'name' => 'required|string|max:200',
+            'phone' => 'required|phone:RU',
+            'weekday' => 'nullable|string|max:30',
+            'time' => 'nullable|string|max:20',
         ]);
 
         // Prepare the data for the email

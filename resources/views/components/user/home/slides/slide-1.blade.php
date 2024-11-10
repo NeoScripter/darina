@@ -33,6 +33,7 @@
         </div>
 
         <button
+                @click="showCallbackModal = true; showPopup = false"
                 class="block px-6 py-3 mx-auto text-xs text-white transition-opacity rounded-full hover:opacity-90 gradient-btn-orange">Заказать
                 выезд замерщика</button>
     </div>

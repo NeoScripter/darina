@@ -5,6 +5,7 @@
         <p class="text-base text-gray-500">Мебель на заказ стала доступнее</p>
     </div>
 
+
     <div class="relative h-148 sm:h-108 md:h-166 lg:h-200">
         <video loop autoplay muted class="object-cover w-full h-full progress__video">
             <source src="{{ asset('videos/main/main-dk.mp4') }}" type="video/mp4" media="(min-width: 768px)">
@@ -18,12 +19,13 @@
 
         <div
             class="absolute left-0 right-0 flex items-center justify-center w-full gap-4 px-3 bottom-8 sm:bottom-10 md:bottom-20">
-            <a href=""
+            <a href="https://wa.me/79585008556" target="_blank"
                 class="w-40 py-2 text-xs text-center transition-colors bg-white rounded-full hover:bg-black hover:text-white">Перейти
                 в Вотсап</a>
-            <a href=""
+            <button
+                @click="showCallbackModal=true"
                 class="w-40 py-2 text-xs text-center text-white bg-black rounded-full hover:bg-white hover:text-black">Заказать
-                звонок</a>
+                звонок</button>
         </div>
 
     </div>
@@ -85,6 +87,8 @@
             </a>
         </div>
     </div>
+
+    <x-user.callback-form />
 
     <x-user.home.videoModal />
 
@@ -163,7 +167,7 @@
                 @for ($i = 0; $i < 5; $i++)
                     <div class="relative w-64 overflow-hidden h-100 rounded-3xl shrink-0">
 
-                        <video muted class="object-cover object-center w-full h-full carousel__video">
+                        <video class="object-cover object-center w-full h-full carousel__video">
                             <source src="{{ asset('videos/main/review-' . (($i + 1) % 3 + 1) . '.mp4') }}" type="video/mp4">
                         </video>
 
@@ -177,12 +181,13 @@
         <p class="mt-8 mb-12 text-base text-center text-white">Проконсультируем и с радостью решим ваши вопросы</p>
 
         <div class="flex items-center justify-center w-full gap-4 px-3 mb-12">
-            <a href=""
+            <a href="https://wa.me/79585008556" target="_blank"
                 class="w-40 py-2 text-xs text-center text-black transition-colors bg-white rounded-full hover:bg-black hover:text-white">Перейти
                 в Вотсап</a>
-            <a href=""
+            <button
+                @click="showCallbackModal = true"
                 class="w-40 py-2 text-xs text-center text-white bg-black rounded-full hover:bg-white hover:text-black">Заказать
-                звонок</a>
+                звонок</button>
         </div>
 
         <p class="mt-8 mb-8 text-base text-center text-white">Социальные сети</p>

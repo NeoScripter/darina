@@ -28,6 +28,7 @@
             <h3 class="w-1/2 mb-2 text-lg font-bold leading-none gradient-text-orange">Бесплатный дизайн проект</h3>
             <p class="mb-2 text-xs text-slate-400">Успей в ноябре</p>
             <button
+                @click="showCallbackModal = true"
                 class="block px-6 py-3 text-xs text-white transition-opacity rounded-full hover:opacity-90 gradient-btn-orange">Заказать
                 выезд замерщика</button>
             <p class="mt-2 leading-none text-gray-400 text-xxxs">* Подробности уточните у Вашего дизайнера</p>

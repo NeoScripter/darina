@@ -22,7 +22,8 @@
 
         <p class="pb-5">Посетите фабрику с которой мы работаем - посмотрите как Darina делает мебель и получите скидку 5%</p>
 
-        <a href=""
-        class="block w-40 py-2 mx-auto mt-10 text-xs text-center text-white bg-black border border-black rounded-full hover:bg-white hover:text-black">Записаться</a>
+        <button
+        @click="showCallbackModal = true; showPopup = false"
+        class="block w-40 py-2 mx-auto mt-10 text-xs text-center text-white bg-black border border-black rounded-full hover:bg-white hover:text-black">Записаться</button>
     </div>
 </div>
