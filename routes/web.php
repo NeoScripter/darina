@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\CallbackFormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('user.index');
 });
+
+Route::view('/callback', 'callback-form')->name('callback.form');
+Route::post('/callback/submit', [CallbackFormController::class, 'submit'])->name('callback.submit');
 
 Route::get('/admin', function () {
     return view('admin.admin');
